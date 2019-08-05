@@ -22,7 +22,7 @@ mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
 source upd.sh
 
 # define pacman packages
-pacman_packages="hexchat thunar xarchiver unzip unrar geany"
+pacman_packages="lua perl python hexchat thunar xarchiver unzip unrar geany"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
