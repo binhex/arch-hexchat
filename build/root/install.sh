@@ -106,21 +106,15 @@ rm /tmp/menu_heredoc
 ####
 
 cat <<'EOF' > /tmp/config_heredoc
-# create soft link to /home/nobody/.config/hexchat folder storing hexchat general settings
-echo "[info] Creating soft link from /config/hexchat to /home/nobody/.config/hexchat..."
-mkdir -p /config/hexchat ; rm -rf /home/nobody/.config/hexchat ; ln -s /config/hexchat /home/nobody/.config/hexchat
 
-# create soft link to /home/nobody/.config/geany folder storing geany general settings
-echo "[info] Creating soft link from /config/geany to /home/nobody/.config/geany..."
-mkdir -p /config/geany ; rm -rf /home/nobody/.config/geany ; ln -s /config/geany /home/nobody/.config/geany
+# delme 10/12/2020
+# this code moves any existing hexchat config over to the new /config/home folder
+cp -R /config/hexchat/ /config/home/.config/ && rm -rf /config/hexchat
+cp -R /config/geany/ /config/home/.config/ && rm -rf /config/geany
+cp -R /config/Thunar/ /config/home/.config/ && rm -rf /config/Thunar
+cp -R /config/xarchiver/ /config/home/.config/ && rm -rf /config/xarchiver
+# /delme 10/12/2020
 
-# create soft link to /home/nobody/.config/Thunar folder storing Thunar general settings
-echo "[info] Creating soft link from /config/Thunar to /home/nobody/.config/Thunar..."
-mkdir -p /config/Thunar ; rm -rf /home/nobody/.config/Thunar ; ln -s /config/Thunar /home/nobody/.config/Thunar
-
-# create soft link to /home/nobody/.config/xarchiver folder storing xarchiver general settings
-echo "[info] Creating soft link from /config/xarchiver to /home/nobody/.config/xarchiver..."
-mkdir -p /config/xarchiver ; rm -rf /home/nobody/.config/xarchiver ; ln -s /config/xarchiver /home/nobody/.config/xarchiver
 EOF
 
 # replace config placeholder string with contents of file (here doc)
