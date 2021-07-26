@@ -108,28 +108,6 @@ sed -i '/<!-- APPLICATIONS_PLACEHOLDER -->/{
 }' /home/nobody/.config/openbox/menu.xml
 rm /tmp/menu_heredoc
 
-# config hexchat
-####
-
-cat <<'EOF' > /tmp/config_heredoc
-
-# delme 10/12/2020
-# this code moves any existing hexchat config over to the new /config/home folder
-cp -R /config/hexchat/ /config/home/.config/ && rm -rf /config/hexchat
-cp -R /config/geany/ /config/home/.config/ && rm -rf /config/geany
-cp -R /config/Thunar/ /config/home/.config/ && rm -rf /config/Thunar
-cp -R /config/xarchiver/ /config/home/.config/ && rm -rf /config/xarchiver
-# /delme 10/12/2020
-
-EOF
-
-# replace config placeholder string with contents of file (here doc)
-sed -i '/# CONFIG_PLACEHOLDER/{
-	s/# CONFIG_PLACEHOLDER//g
-	r /tmp/config_heredoc
-}' /usr/local/bin/start.sh
-rm /tmp/config_heredoc
-
 # container perms
 ####
 
