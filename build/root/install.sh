@@ -42,7 +42,7 @@ fi
 source upd.sh
 
 # define pacman packages
-pacman_packages="lua perl python hexchat thunar xarchiver geany"
+pacman_packages="lua perl hexchat thunar xarchiver geany"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
