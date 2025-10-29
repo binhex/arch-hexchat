@@ -43,7 +43,7 @@ refresh.sh
 source upd.sh
 
 # define pacman packages
-pacman_packages="lua perl hexchat thunar xarchiver geany"
+pacman_packages="lua perl thunar xarchiver geany"
 
 # install compiled packages using pacman
 if [[ -n "${pacman_packages}" ]]; then
@@ -53,6 +53,15 @@ if [[ -n "${pacman_packages}" ]]; then
 	fi
 	pacman -S --needed $pacman_packages --noconfirm
 fi
+
+# aur packages
+####
+
+# define aur packages
+aur_packages="hexchat"
+
+# call aur install script (arch user repo)
+aur.sh --aur-package "${aur_packages}"
 
 # config novnc
 ###
