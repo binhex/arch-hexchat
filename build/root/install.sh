@@ -43,7 +43,7 @@ refresh.sh
 source upd.sh
 
 # define pacman packages
-pacman_packages="lua perl thunar xarchiver geany gtk-doc"
+pacman_packages="lua perl thunar xarchiver geany gtk-doc gtk-doc-tools"
 
 # install compiled packages using pacman
 if [[ -n "${pacman_packages}" ]]; then
